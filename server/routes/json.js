@@ -3,8 +3,8 @@ const controllers = require("../controllers");
 
 router.get("/", controllers.jsonController.getJson);
 
-//router.post("/", controllers.productController.addProduct);
+router.post("/", controllers.jsonController.addJson);
 
-//router.get("/:_id", controllers.productController.getProductById);
+router.get("/:_id", controllers.jsonController.getJsonById);
 
 module.exports = router;

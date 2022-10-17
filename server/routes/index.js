@@ -1,3 +1,3 @@
 module.exports = {
-    json: require("./json.js")
-  };
+  json: require("./json.js"),
+};

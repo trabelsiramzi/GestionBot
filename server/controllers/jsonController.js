@@ -1,20 +1,16 @@
-const {JsonModel} = require("../model/jsonModel")
-const mongoose = require("mongoose");
-
+const { JsonModel } = require("../models");
 
 module.exports = {
   async getJson(req, res, next) {
-    console.log(JsonModel)
-    try{
-        const resultat= await JsonModel.find()
-      
-        res.send(resultat);  
-    }catch(er){
-console.log(er)
+    try {
+      const resultat = await JsonModel.find();
+
+      res.send(resultat);
+    } catch (er) {
+      res.send(er)
+      console.log(er);
     }
 
-  
-    
     // const userOperation = new operations.UserOperation();
     // const { SUCCESS, ERROR } = userOperation.outputs;
 
@@ -23,20 +19,20 @@ console.log(er)
     // const users = await userOperation.getUsers();
   },
 
-//   async addJson(req, res, next) {
-//     const userOperation = new operations.UserOperation();
-//     const { SUCCESS, ERROR } = userOperation.outputs;
+  async addJson(req, res, next) {
+    console.log(req.body);
+    try {
+      const response = await JsonModel.create(req.body);
+      console.log(response);
+      res.status(201).send(response._id);
+    } catch (e) {
+      res.status(502);
+    }
+  },
 
-//     userOperation.on(SUCCESS, (users) => res.send(users)).on(ERROR, next);
-
-//     const user = await userOperation.addUser(req.body);
-//   },
-
-//   async getJsonById(req, res, next) {
-//     const userOperation = new operations.UserOperation();
-//     const { SUCCESS, ERROR } = userOperation.outputs;
-
-//     userOperation.on(SUCCESS, (users) => res.send(users)).on(ERROR, next);
-//     const user = await userOperation.getUserById(req.params);
-//   }
+  async getJsonById(req, res, next) {
+    console.log(req.params);
+    const resultat = await JsonModel.findById(req.params._id);
+    res.send(resultat)
+  },
 };
