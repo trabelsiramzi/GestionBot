@@ -9,7 +9,7 @@ const JsonNew = () => {
   const submit = async (data) => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_API}/api/json`, data)
-      navigate('/')
+      navigate('/dashboard/json')
     } catch (e) {
       console.log(e)
     }

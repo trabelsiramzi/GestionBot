@@ -26,7 +26,7 @@ const JsonEdit = () => {
       console.log(e)
     }
   }
-  return <> {fetch && <JsonForm submit={submit} type={'new'} data={data} />}</>
+  return <> {fetch && <JsonForm submit={submit} type={'edit'} data={data} />}</>
 }
 
 export default JsonEdit

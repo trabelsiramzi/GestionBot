@@ -28,7 +28,7 @@ const TablesJson = () => {
   const [list, setList] = useState([])
   const deleteTag = async (_id) => {
     try {
-      axios.delete(`${process.env.REACT_APP_API}/api/json/${_id}`)
+      await axios.delete(`${process.env.REACT_APP_API}/api/json/${_id}`)
       fetchData()
     } catch (e) {
       console.log(e)
@@ -51,7 +51,7 @@ const TablesJson = () => {
           <CCardBody>
             <CTable caption="top">
               <CTableCaption>
-                <CButton color="success" size="lg" href="#/dashboard/json/new">
+                <CButton color="success" size="lg" href="/dashboard/json/new">
                   Nouveau Tag
                 </CButton>
               </CTableCaption>
@@ -63,7 +63,7 @@ const TablesJson = () => {
                 </CTableRow>
               </CTableHead>
               <CTableBody>
-                {list.map((tags, key) => (
+                {list?.map((tags, key) => (
                   <CTableRow key={key} scope="row">
                     <CTableHeaderCell scope="row">{tags._id}</CTableHeaderCell>
                     <CTableDataCell>{tags.tag}</CTableDataCell>
@@ -74,10 +74,10 @@ const TablesJson = () => {
                         </CDropdownToggle>
 
                         <CDropdownMenu>
-                          <CDropdownItem href={`#/dashboard/json/${tags._id}`}>
+                          <CDropdownItem href={`/dashboard/json/${tags._id}`}>
                             consulaté
                           </CDropdownItem>
-                          <CDropdownItem href={`#/dashboard/json/${tags._id}/edit`}>
+                          <CDropdownItem href={`/dashboard/json/${tags._id}/edit`}>
                             editer
                           </CDropdownItem>
                           <CDropdownDivider />
