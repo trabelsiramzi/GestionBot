@@ -52,14 +52,16 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 const TablesJson = React.lazy(() => import('./views1/json/JsonListe'))
 const JsonShow = React.lazy(() => import('./views1/json/JsonShow'))
 const JsonNew = React.lazy(() => import('./views1/json/JsonNew'))
+const JsonEdit = React.lazy(() => import('./views1/json/JsonEdit'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/dashboard/json', name: 'Dashboard', element: TablesJson },
-  { path: '/dashboard/json/:_id', name: 'consultation', element: JsonShow },
-  { path: '/dashboard/new', name: 'Dashboard', element: JsonNew },
-  { path: '/dashboard/:id/edit', name: 'Dashboard', element: Dashboard },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
+  { path: '/dashboard/json', name: 'Json Liste', element: TablesJson },
+  { path: '/dashboard/json/new', name: 'New Json', element: JsonNew },
+  { path: '/dashboard/json/:_id', name: 'Json details', element: JsonShow },
+  { path: '/dashboard/json/:_id/edit', name: 'Edite Json', element: JsonEdit },
+
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },

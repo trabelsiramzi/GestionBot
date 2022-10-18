@@ -7,23 +7,15 @@ module.exports = {
 
       res.send(resultat);
     } catch (er) {
-      res.send(er)
+      res.send(er);
       console.log(er);
     }
-
-    // const userOperation = new operations.UserOperation();
-    // const { SUCCESS, ERROR } = userOperation.outputs;
-
-    // userOperation.on(SUCCESS, (users) => res.send(users)).on(ERROR, next);
-
-    // const users = await userOperation.getUsers();
   },
 
   async addJson(req, res, next) {
     console.log(req.body);
     try {
       const response = await JsonModel.create(req.body);
-      console.log(response);
       res.status(201).send(response._id);
     } catch (e) {
       res.status(502);
@@ -31,8 +23,27 @@ module.exports = {
   },
 
   async getJsonById(req, res, next) {
-    console.log(req.params);
-    const resultat = await JsonModel.findById(req.params._id);
-    res.send(resultat)
+    try {
+      const resultat = await JsonModel.findById(req.params._id);
+      res.send(resultat);
+    } catch (e) {
+      res.status(502);
+    }
+  },
+  async addJsonById(req, res, next) {
+    try {
+      resultat = await JsonModel.findByIdAndUpdate(req.params._id, req.body);
+      res.send(resultat.id);
+    } catch (e) {
+      res.status(502).send(e);
+    }
+  },
+  async deleteById(req, res, next) {
+    try {
+      await JsonModel.findByIdAndDelete(req.params._id);
+      res.status(204).send("ok");
+    } catch (e) {
+      res.status(502).send(e);
+    }
   },
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useNavigate, useParams } from 'react-router-dom'
 import {
   CCard,
   CCardBody,
@@ -18,18 +19,26 @@ import {
   CDropdownItem,
   CDropdownMenu,
   CDropdownToggle,
+  CButton,
 } from '@coreui/react'
 
-import { DocsExample } from 'src/components'
-
 const TablesJson = () => {
-  const [list, setList] = useState([])
+  let navigate = useNavigate()
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_API}/api/json`)
-      setList(response.data)
+  const [list, setList] = useState([])
+  const deleteTag = async (_id) => {
+    try {
+      axios.delete(`${process.env.REACT_APP_API}/api/json/${_id}`)
+      fetchData()
+    } catch (e) {
+      console.log(e)
     }
+  }
+  const fetchData = async () => {
+    const response = await axios.get(`${process.env.REACT_APP_API}/api/json`)
+    setList(response.data)
+  }
+  useEffect(() => {
     fetchData()
   }, [])
   return (
@@ -37,22 +46,15 @@ const TablesJson = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>React Table</strong> <small>Captions</small>
+            <strong>Liste des tag</strong>
           </CCardHeader>
           <CCardBody>
-            <p className="text-medium-emphasis small">
-              A <code>&lt;CTableCaption&gt;</code> functions like a heading for a table. It helps
-              users with screen readers to find a table and understand what it&#39;s about and
-              decide if they want to read it.
-            </p>
-            <p className="text-medium-emphasis small">
-              You can also put the <code>&lt;CTableCaption&gt;</code> on the top of the table with{' '}
-              <code>caption=&#34;top&#34;</code>.
-            </p>
-
             <CTable caption="top">
-              <CTableCaption>List of Tags</CTableCaption>
-              <CTableCaption>Nouveau Tag</CTableCaption>
+              <CTableCaption>
+                <CButton color="success" size="lg" href="#/dashboard/json/new">
+                  Nouveau Tag
+                </CButton>
+              </CTableCaption>
               <CTableHead>
                 <CTableRow>
                   <CTableHeaderCell scope="col">ID</CTableHeaderCell>
@@ -75,11 +77,13 @@ const TablesJson = () => {
                           <CDropdownItem href={`#/dashboard/json/${tags._id}`}>
                             consulaté
                           </CDropdownItem>
-                          <CDropdownItem href={`#/dashboard/json/${tags._id}/edite`}>
+                          <CDropdownItem href={`#/dashboard/json/${tags._id}/edit`}>
                             editer
                           </CDropdownItem>
                           <CDropdownDivider />
-                          <CDropdownItem href="#">supprimer</CDropdownItem>
+                          <CDropdownItem onClick={(e) => deleteTag(tags._id)}>
+                            supprimer
+                          </CDropdownItem>
                         </CDropdownMenu>
                       </CDropdown>
                     </CTableDataCell>

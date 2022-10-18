@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { CButton, CCol, CForm, CFormInput, CFormFeedback, CFormLabel } from '@coreui/react'
-const JsonForm = ({ data, type }) => {
+const JsonForm = ({ data, type, submit }) => {
   const [validated, setValidated] = useState(false)
-  const [patterns, setPatterns] = useState(data.patterns || [''])
-  const [responses, setResponses] = useState(data.responses || [''])
+  const [patterns, setPatterns] = useState(data?.patterns || [''])
+  const [responses, setResponses] = useState(data?.responses || [''])
+  const [tag, setTag] = useState(data?.tag || [''])
 
   // handle input change
   const handleInputChange = (e, index, type) => {
@@ -13,6 +14,9 @@ const JsonForm = ({ data, type }) => {
       const list = [...patterns]
       list[index] = value
       setPatterns(list)
+    } else if (type === 'tag') {
+      const { value } = e.target
+      setTag(value)
     } else {
       const { value } = e.target
       const list = [...responses]
@@ -49,6 +53,7 @@ const JsonForm = ({ data, type }) => {
       event.stopPropagation()
     }
     setValidated(true)
+    submit({ tag, patterns, responses })
   }
   return (
     <CForm
@@ -60,12 +65,18 @@ const JsonForm = ({ data, type }) => {
       {type === 'edit' && (
         <>
           <CFormLabel htmlFor="validationCustom01">ID</CFormLabel>
-          <CFormInput type="text" id="_id" defaultValue={data?._id} disabled />
+          <CFormInput type="text" id="_id" value={data?._id} disabled />
         </>
       )}
       <CCol md={8}>
         <CFormLabel htmlFor="tag">Tag</CFormLabel>
-        <CFormInput type="text" id="tag" defaultValue="" required />
+        <CFormInput
+          type="text"
+          id="tag"
+          value={tag}
+          onChange={(e) => handleInputChange(e, null, 'tag')}
+          required
+        />
         <CFormFeedback valid>looks good</CFormFeedback>
       </CCol>
       {patterns.map((pattern, key) => {
