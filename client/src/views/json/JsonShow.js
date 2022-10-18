@@ -28,7 +28,7 @@ const JsonShow = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Card</strong> <small>Body</small>
+            <strong>Consultation Tag</strong>
           </CCardHeader>
           <CCardBody>
             <CRow>

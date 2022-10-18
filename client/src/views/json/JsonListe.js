@@ -46,7 +46,7 @@ const TablesJson = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Liste des tag</strong>
+            <strong>Liste des tags</strong>
           </CCardHeader>
           <CCardBody>
             <CTable caption="top">
@@ -75,7 +75,7 @@ const TablesJson = () => {
 
                         <CDropdownMenu>
                           <CDropdownItem href={`/dashboard/json/${tags._id}`}>
-                            consulaté
+                            consulater
                           </CDropdownItem>
                           <CDropdownItem href={`/dashboard/json/${tags._id}/edit`}>
                             editer

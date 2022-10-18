@@ -98,7 +98,7 @@ const JsonForm = ({ data, type, submit }) => {
                   size="sm"
                   onClick={() => handleRemoveClick(key, 'patterns')}
                 >
-                  Remove
+                  Supprimer
                 </CButton>
               )}
               {patterns.length - 1 === key && (
@@ -129,7 +129,7 @@ const JsonForm = ({ data, type, submit }) => {
                   size="sm"
                   onClick={() => handleRemoveClick(key, 'response')}
                 >
-                  Remove
+                  Supprimer
                 </CButton>
               )}
               {responses.length - 1 === key && (
@@ -143,7 +143,7 @@ const JsonForm = ({ data, type, submit }) => {
       })}
       <CCol xs={12}>
         <CButton color="primary" type="submit">
-          Submit form
+          Sauvegarder
         </CButton>
       </CCol>
     </CForm>
