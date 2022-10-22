@@ -29,10 +29,10 @@ const AppHeaderDropdown = () => {
             In progress
           </CBadge>
         </CDropdownItem>
-        <CDropdownHeader className="bg-light fw-semibold py-2">Paramétre</CDropdownHeader>
+        <CDropdownHeader className="bg-light fw-semibold py-2">Paramétres</CDropdownHeader>
         <CDropdownItem href="#">
           <CIcon icon={cilSettings} className="me-2" />
-          Settings
+          Paramétres
           <CBadge color="danger" className="ms-2">
             In progress
           </CBadge>
