@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const routes = require("./routes");
-
+app.use("/api", routes.auth);
 app.use("/api/json", routes.json);
 
 //app.use(ErrorService);

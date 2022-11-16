@@ -8,7 +8,6 @@ module.exports = {
       res.send(resultat);
     } catch (er) {
       res.send(er);
-      console.log(er);
     }
   },
 
