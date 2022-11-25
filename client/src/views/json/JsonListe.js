@@ -75,14 +75,14 @@ const TablesJson = () => {
 
                         <CDropdownMenu>
                           <CDropdownItem href={`/dashboard/json/${tags._id}`}>
-                            consulater
+                            Consulater
                           </CDropdownItem>
                           <CDropdownItem href={`/dashboard/json/${tags._id}/edit`}>
-                            editer
+                            Editer
                           </CDropdownItem>
                           <CDropdownDivider />
                           <CDropdownItem onClick={(e) => deleteTag(tags._id)}>
-                            supprimer
+                            Supprimer
                           </CDropdownItem>
                         </CDropdownMenu>
                       </CDropdown>

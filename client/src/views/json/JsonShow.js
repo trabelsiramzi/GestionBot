@@ -37,7 +37,7 @@ const JsonShow = () => {
                   <CCardBody>
                     <CCardTitle>{list.tag}</CCardTitle>
                     <CCardText>
-                      <p>patterns</p>
+                      <p>Patterns</p>
                       {list?.patterns?.map((pattern) => {
                         return (
                           <>
@@ -48,7 +48,7 @@ const JsonShow = () => {
                       })}
                     </CCardText>
                     <CCardText>
-                      <p>response</p>
+                      <p>Responses</p>
                       {list?.responses?.map((response) => {
                         return (
                           <>

@@ -4,7 +4,7 @@ import { cilPuzzle, cilSpeedometer } from '@coreui/icons'
 import { CNavItem } from '@coreui/react'
 
 const _nav = [
-  {
+  /*{
     component: CNavItem,
     name: 'Dashboard',
     to: '/dashboard',
@@ -13,7 +13,7 @@ const _nav = [
       color: 'danger',
       text: 'In progress',
     },
-  },
+  },*/
   {
     component: CNavItem,
     name: 'Json',
@@ -21,7 +21,6 @@ const _nav = [
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
     badge: {
       color: 'info',
-      text: 'NEW',
     },
   },
 ]

@@ -25,17 +25,11 @@ const AppHeaderDropdown = () => {
         <CDropdownItem href="#">
           <CIcon icon={cilUser} className="me-2" />
           Profile
-          <CBadge color="danger" className="ms-2">
-            In progress
-          </CBadge>
         </CDropdownItem>
         <CDropdownHeader className="bg-light fw-semibold py-2">Paramétres</CDropdownHeader>
         <CDropdownItem href="#">
           <CIcon icon={cilSettings} className="me-2" />
           Paramétres
-          <CBadge color="danger" className="ms-2">
-            In progress
-          </CBadge>
         </CDropdownItem>
         <CDropdownDivider />
         <CDropdownItem href="/login">

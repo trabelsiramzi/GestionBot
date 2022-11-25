@@ -67,16 +67,16 @@ const Login = () => {
               <CCard className="p-4">
                 <CCardBody>
                   <CForm>
-                    <h1>Login</h1>
+                    <h1>Connexion</h1>
                     <p className="text-medium-emphasis">
-                      Sign In to your account
+                     Connectez-vous à votre compte
                     </p>
                     <CInputGroup className="mb-3">
                       <CInputGroupText>
                         <CIcon icon={cilUser} />
                       </CInputGroupText>
                       <CFormInput
-                        placeholder="Username"
+                        placeholder="Nom utilisateur"
                         autoComplete="username"
                         name="email"
                         onChange={(e) => setEmail(e.target.value)}
@@ -88,7 +88,7 @@ const Login = () => {
                       </CInputGroupText>
                       <CFormInput
                         type="password"
-                        placeholder="Password"
+                        placeholder="Mot de passe"
                         autoComplete="current-password"
                         name="password"
                         onChange={(e) => setPassword(e.target.value)}
@@ -101,12 +101,12 @@ const Login = () => {
                           className="px-4"
                           onClick={submit}
                         >
-                          Login
+                          Connexion
                         </CButton>
                       </CCol>
                       <CCol xs={6} className="text-right">
                         <CButton color="link" className="px-0">
-                          Forgot password?
+                         Mot de passe oublié?
                         </CButton>
                       </CCol>
                     </CRow>
