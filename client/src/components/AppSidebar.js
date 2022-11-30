@@ -6,6 +6,7 @@ import CIcon from '@coreui/icons-react'
 import { AppSidebarNav } from './AppSidebarNav'
 import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
+import logo from 'src/assets/Soprahr.jpg'
 
 // sidebar nav config
 import navigation from '../_nav'
@@ -25,7 +26,7 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
-        <CIcon icon={cilChatBubble} size="9xl" />
+        <img src={logo} height={60} />
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>

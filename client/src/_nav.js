@@ -6,7 +6,7 @@ import { CNavItem } from '@coreui/react'
 const _nav = [
   {
     component: CNavItem,
-    name: 'Json',
+    name: 'Tags',
     to: '/json',
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
     badge: {
@@ -15,7 +15,7 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Reporting',
+    name: 'Historique',
     to: '/reporting',
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
     badge: {

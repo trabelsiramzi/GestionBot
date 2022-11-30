@@ -37,16 +37,16 @@ const ReportingList = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Liste des question</strong>
+            <strong>Historique des conversations</strong>
           </CCardHeader>
           <CCardBody>
-            <CTable caption="top">
+            <CTable caption="top" bordered>
               <CTableCaption>
                 <CFormInput
                   type="text"
                   size="lg"
-                  placeholder="recherche"
-                  aria-label="lg input example"
+                  placeholder="Recherche"
+                  aria-label="recherche"
                   onChange={(e) => {
                     setSearch(e.target.value)
                   }}
@@ -54,16 +54,20 @@ const ReportingList = () => {
               </CTableCaption>
               <CTableHead>
                 <CTableRow>
-                  <CTableHeaderCell scope="col">ID</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">Question</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">Reponse</CTableHeaderCell>
+                  {/* <CTableHeaderCell scope="col">ID</CTableHeaderCell> */}
+                  <CTableHeaderCell scope="row" color="dark">
+                    Question
+                  </CTableHeaderCell>
+                  <CTableHeaderCell scope="row" color="dark">
+                    Reponse
+                  </CTableHeaderCell>
                 </CTableRow>
               </CTableHead>
               <CTableBody>
                 {list?.map((res, key) => (
-                  <CTableRow key={key} scope="row">
-                    <CTableHeaderCell>{res._id}</CTableHeaderCell>
-                    <CTableDataCell>{res.Question}</CTableDataCell>
+                  <CTableRow key={key} scope="col">
+                    {/* <CTableHeaderCell>{res._id}</CTableHeaderCell> */}
+                    <CTableDataCell className="w-50">{res.Question}</CTableDataCell>
                     <CTableDataCell>{res.Reponse}</CTableDataCell>
                   </CTableRow>
                 ))}

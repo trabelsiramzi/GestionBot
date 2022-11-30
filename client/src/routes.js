@@ -9,11 +9,11 @@ const Training = React.lazy(() => import('./views/training/Training.js'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/json', name: 'Json Liste', element: TablesJson },
-  { path: '/json/new', name: 'New Json', element: JsonNew },
-  { path: '/json/:_id', name: 'Json details', element: JsonShow },
-  { path: '/json/:_id/edit', name: 'Edite Json', element: JsonEdit },
-  { path: '/reporting', name: 'Rapport', element: ReportingList },
+  { path: '/json', name: 'Tags Liste', element: TablesJson },
+  { path: '/json/new', name: 'Nouveau Tag', element: JsonNew },
+  { path: '/json/:_id', name: 'Detail Tag', element: JsonShow },
+  { path: '/json/:_id/edit', name: 'Modification Tag', element: JsonEdit },
+  { path: '/reporting', name: 'Historique', element: ReportingList },
   { path: '/training', name: 'Entrainement', element: Training },
 ]
 

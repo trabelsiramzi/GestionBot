@@ -13,7 +13,8 @@ import { cilMenu } from '@coreui/icons'
 
 import { AppBreadcrumb } from './index'
 import { AppHeaderDropdown } from './header/index'
-import { logo } from 'src/assets/brand/logo'
+//import { logo } from 'src/assets/brand/logo'
+import logo from 'src/assets/Soprahr.jpg'
 
 const AppHeader = () => {
   const dispatch = useDispatch()
@@ -28,8 +29,9 @@ const AppHeader = () => {
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
-        <CHeaderBrand className="mx-auto d-md-none" to="/">
-          <CIcon icon={logo} height={48} alt="Logo" />
+        <CHeaderBrand className="mx-auto" to="/">
+          {/* <CIcon icon={logo} height={48} alt="Logo" /> */}
+          <img src={logo} height={48} />
         </CHeaderBrand>
         <CHeaderNav className="ms-3">
           <AppHeaderDropdown />

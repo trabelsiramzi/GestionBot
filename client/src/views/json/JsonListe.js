@@ -51,7 +51,7 @@ const TablesJson = () => {
           <CCardBody>
             <CTable caption="top">
               <CTableCaption>
-                <CButton color="success" size="lg" href="/json/new">
+                <CButton color="info" size="lg" href="/json/new">
                   Nouveau Tag
                 </CButton>
               </CTableCaption>
@@ -74,7 +74,7 @@ const TablesJson = () => {
                         </CDropdownToggle>
 
                         <CDropdownMenu>
-                          <CDropdownItem href={`/json/${tags._id}`}>Consulater</CDropdownItem>
+                          <CDropdownItem href={`/json/${tags._id}`}>Consulter</CDropdownItem>
                           <CDropdownItem href={`/json/${tags._id}/edit`}>Editer</CDropdownItem>
                           <CDropdownDivider />
                           <CDropdownItem onClick={(e) => deleteTag(tags._id)}>

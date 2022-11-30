@@ -17,6 +17,7 @@ import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 import Cookies from 'js-cookie'
 import { useNavigate, Navigate } from 'react-router-dom'
+import logo from 'src/assets/Soprahr.jpg'
 
 import axios from 'axios'
 const Login = () => {
@@ -106,7 +107,9 @@ const Login = () => {
                 </CCardBody>
               </CCard>
               <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
-                <CCardBody className="text-center">{/* <img src={logo} alt="logo" /> */}</CCardBody>
+                <CCardBody className="text-center">
+                  <img style={{ marginTop: '100px' }} src={logo} height={60} />
+                </CCardBody>
               </CCard>
             </CCardGroup>
           </CCol>

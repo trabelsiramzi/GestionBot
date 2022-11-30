@@ -26,15 +26,16 @@ const Training = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>lancer l&apos;entrainement</strong>
+            <strong>Lancer l&apos;entrainement</strong>
           </CCardHeader>
           <CCardBody>
-            <CButton color="success" size="lg" onClick={runTraining}>
-              lancer l&apos;entrainement
+            <CButton color="info" size="lg" onClick={runTraining}>
+              Lancer l&apos;entrainement
             </CButton>
             {isLoading && (
               <div
                 style={{
+                  marginTop: '10vh',
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
