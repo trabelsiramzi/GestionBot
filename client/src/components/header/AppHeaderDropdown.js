@@ -13,8 +13,12 @@ import { cilAccountLogout, cilSettings, cilUser } from '@coreui/icons'
 import CIcon from '@coreui/icons-react'
 
 import avatar8 from './../../assets/images/avatars/2.jpg'
+import Cookies from 'js-cookie'
 
 const AppHeaderDropdown = () => {
+  const logout = () => {
+    Cookies.remove('token')
+  }
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
@@ -32,7 +36,7 @@ const AppHeaderDropdown = () => {
           Paramétres
         </CDropdownItem>
         <CDropdownDivider />
-        <CDropdownItem href="/login">
+        <CDropdownItem onClick={logout} href="/login">
           <CIcon icon={cilAccountLogout} className="me-2" />
           Déconnecter
         </CDropdownItem>

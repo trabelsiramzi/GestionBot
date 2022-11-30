@@ -4,23 +4,31 @@ import { cilPuzzle, cilSpeedometer } from '@coreui/icons'
 import { CNavItem } from '@coreui/react'
 
 const _nav = [
-  /*{
-    component: CNavItem,
-    name: 'Dashboard',
-    to: '/dashboard',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-    badge: {
-      color: 'danger',
-      text: 'In progress',
-    },
-  },*/
   {
     component: CNavItem,
     name: 'Json',
-    to: '/dashboard/json',
+    to: '/json',
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
     badge: {
       color: 'info',
+    },
+  },
+  {
+    component: CNavItem,
+    name: 'Reporting',
+    to: '/reporting',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    badge: {
+      color: 'info',
+    },
+  },
+  {
+    component: CNavItem,
+    name: 'Entrainement',
+    to: '/training',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    badge: {
+      color: 'danger',
     },
   },
 ]

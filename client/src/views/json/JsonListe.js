@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useNavigate, useParams } from 'react-router-dom'
+import Cookies from 'js-cookie'
 import {
   CCard,
   CCardBody,
@@ -23,19 +23,19 @@ import {
 } from '@coreui/react'
 
 const TablesJson = () => {
-  let navigate = useNavigate()
-
   const [list, setList] = useState([])
+  const token = Cookies.get('token')
+  const headers = { Authorization: `Bearer ${token}` }
   const deleteTag = async (_id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API}/api/json/${_id}`)
+      await axios.delete(`${process.env.REACT_APP_API}/api/json/${_id}`, { headers })
       fetchData()
     } catch (e) {
       console.log(e)
     }
   }
   const fetchData = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_API}/api/json`)
+    const response = await axios.get(`${process.env.REACT_APP_API}/api/json`, { headers })
     setList(response.data)
   }
   useEffect(() => {
@@ -51,7 +51,7 @@ const TablesJson = () => {
           <CCardBody>
             <CTable caption="top">
               <CTableCaption>
-                <CButton color="success" size="lg" href="/dashboard/json/new">
+                <CButton color="success" size="lg" href="/json/new">
                   Nouveau Tag
                 </CButton>
               </CTableCaption>
@@ -74,12 +74,8 @@ const TablesJson = () => {
                         </CDropdownToggle>
 
                         <CDropdownMenu>
-                          <CDropdownItem href={`/dashboard/json/${tags._id}`}>
-                            Consulater
-                          </CDropdownItem>
-                          <CDropdownItem href={`/dashboard/json/${tags._id}/edit`}>
-                            Editer
-                          </CDropdownItem>
+                          <CDropdownItem href={`/json/${tags._id}`}>Consulater</CDropdownItem>
+                          <CDropdownItem href={`/json/${tags._id}/edit`}>Editer</CDropdownItem>
                           <CDropdownDivider />
                           <CDropdownItem onClick={(e) => deleteTag(tags._id)}>
                             Supprimer

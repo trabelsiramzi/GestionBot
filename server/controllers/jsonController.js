@@ -12,7 +12,6 @@ module.exports = {
   },
 
   async addJson(req, res, next) {
-    console.log(req.body);
     try {
       const response = await JsonModel.create(req.body);
       res.status(201).send(response._id);

@@ -31,7 +31,6 @@ module.exports = {
         // geting our data from frontend
         const { email, password: plainTextPassword } = req.body;
         // encrypting our password to store in database
-        console.log(email, plainTextPassword);
         const password = await bcrypt.hash(plainTextPassword, salt);
         try {
             // storing our user data into database
@@ -39,7 +38,6 @@ module.exports = {
                 email,
                 password,
             });
-            console.log(response);
             return res.redirect("/login");
         } catch (error) {
             console.log(JSON.stringify(error));
@@ -52,7 +50,6 @@ module.exports = {
     async verifyToken(req, res, next) {
         try {
             const bearerHeader = req.headers["authorization"];
-            console.log(bearerHeader);
             if (bearerHeader) {
                 const bearer = bearerHeader.split(" ");
                 const token = bearer[1];
