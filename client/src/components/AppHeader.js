@@ -14,7 +14,7 @@ import { cilMenu } from '@coreui/icons'
 import { AppBreadcrumb } from './index'
 import { AppHeaderDropdown } from './header/index'
 //import { logo } from 'src/assets/brand/logo'
-import logo from 'src/assets/Soprahr.jpg'
+import logo from 'src/assets/Soprahr.png'
 
 const AppHeader = () => {
   const dispatch = useDispatch()

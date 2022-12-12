@@ -64,8 +64,8 @@ const JsonForm = ({ data, type, submit }) => {
     >
       {type === 'edit' && (
         <CCol md={8}>
-          <CFormLabel htmlFor="validationCustom01">ID</CFormLabel>
-          <CFormInput type="text" id="_id" value={data?._id} disabled />
+          {/* <CFormLabel htmlFor="validationCustom01">ID</CFormLabel> */}
+          {/* <CFormInput type="text" id="_id" value={data?._id} disabled /> */}
         </CCol>
       )}
       <CCol md={8}>

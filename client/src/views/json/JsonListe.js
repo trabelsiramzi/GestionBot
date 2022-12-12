@@ -57,7 +57,7 @@ const TablesJson = () => {
               </CTableCaption>
               <CTableHead>
                 <CTableRow>
-                  <CTableHeaderCell scope="col">ID</CTableHeaderCell>
+                  {/* <CTableHeaderCell scope="col">ID</CTableHeaderCell> */}
                   <CTableHeaderCell scope="col">TAGS</CTableHeaderCell>
                   <CTableHeaderCell scope="col">ACTION</CTableHeaderCell>
                 </CTableRow>
@@ -65,7 +65,7 @@ const TablesJson = () => {
               <CTableBody>
                 {list?.map((tags, key) => (
                   <CTableRow key={key} scope="row">
-                    <CTableHeaderCell scope="row">{tags._id}</CTableHeaderCell>
+                    {/* <CTableHeaderCell scope="row">{tags._id}</CTableHeaderCell> */}
                     <CTableDataCell>{tags.tag}</CTableDataCell>
                     <CTableDataCell>
                       <CDropdown variant="btn-group">
